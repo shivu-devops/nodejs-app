@@ -9,11 +9,11 @@ pipeline {
 
     stages {
 
-        stage('git-checkout') {
-            steps {
-                git 'https://github.com/shivu-devops/nodejs-app.git'
-            }
-        }
+        // stage('git-checkout') {
+        //     steps {
+        //         git 'https://github.com/shivu-devops/nodejs-app.git'
+        //     }
+        // }
 
         stage('Lint') {
             steps {
@@ -72,7 +72,7 @@ pipeline {
                     sh '''
                     docker stop task-app || true
                     docker rm task-app || true
-                    docker run -d --name=task-app -p 3001:3000 shivu27/task-app:latest"
+                    docker run -d --name=task-app -p 3001:3000 shivu27/task-app:latest
                     '''
                  }
                }
