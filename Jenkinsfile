@@ -11,7 +11,7 @@ pipeline {
 
         stage('git-checkout') {
             steps {
-                checkout scm
+                git 'https://github.com/shivu-devops/nodejs-app.git'
             }
         }
 
